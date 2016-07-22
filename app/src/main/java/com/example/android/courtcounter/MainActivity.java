@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
     int scoreTeamA=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         displayForTeamB(scoreTeamB);
     }
     /**
-     * Increase the score for Team A by 2 points.
+     * Increase the score for Team B by 2 points.
      */
     public void addTwoForTeamB(View v) {
         scoreTeamB=scoreTeamB+2;
@@ -65,6 +64,12 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Displays the given score for Team B.
      */
+    public void resetScore(View v){
+        scoreTeamA = 0;
+        scoreTeamB = 0;
+        displayForTeamA(scoreTeamA);
+        displayForTeamB(scoreTeamB);
+    }
     public void displayForTeamB(int score) {
         TextView scoreView = (TextView) findViewById(R.id.team_b_score);
         scoreView.setText(String.valueOf(score));
